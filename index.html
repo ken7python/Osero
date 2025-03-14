@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <title>オセロ</title>
+        <style>
+            #game{
+                position: absolute;
+                top: 10%;
+                left: 30%;
+                transform: translate(-10%, -30%);
+            }
+
+            #alertDiv{
+                position:absolute;
+                z-index: 1000;
+
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+
+                display: none;
+            }
+            body{
+                background-color: aquamarine;
+            }
+            b{
+                font-size: 1cm;
+            }
+            #message{
+                font-size: 0.5cm;
+            }
+            #zi{
+                display: none;
+            }
+
+            #start{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            button{
+                font-size: 2cm;
+            }
+            button.btn-gradient {
+                -webkit-transform: skew(-15deg);
+                transform: skew(-15deg);
+                color: #fff;
+                border-radius: 0;
+                background-image: -webkit-gradient(linear, left top, right top, from(#2af598), to(#009efd));
+                background-image: -webkit-linear-gradient(left, #2af598 0%, #009efd 100%);
+                background-image: linear-gradient(90deg, #2af598 0%, #009efd 100%);
+                -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+                box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+            }
+
+            button.btn-gradient:hover {
+                -webkit-transform: skew(0);
+                transform: skew(0);
+                color: #fff;
+                -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, .1);
+                box-shadow: 0 2px 3px rgba(0, 0, 0, .1);
+            }
+        </style>
+        <meta charset="utf-8">
+        <script src="ai.js"></script>
+        <script src="media/vue.min.js"></script>
+    </head>
+    <body>
+        <h1>オセロゲーム</h1>
+
+        <div id="alertDiv">
+            <img src="img/BlackWin.png" id="alert">
+        </div>
+
+        <div id="game">
+            <div id="main"></div>
+         </div>
+
+    <div id="zi">
+        <p id="message">{{ message }}</p>
+        <img src="img/black.png">
+        <b>✖️{{ black }}</b>
+
+        <br>
+        <br>
+        <br>
+
+        <img src="img/white.png">
+        <b>✖️{{ white }}</b>
+    </div>
+
+    <div id="start">
+        <button onclick="start()" href="" class="btn btn-gradient"><span>スタート</span></a>
+    </div>
+    
+    <script src="index.js"></script>
+    </body>
+</html>
